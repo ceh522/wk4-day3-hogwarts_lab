@@ -15,25 +15,13 @@
   value="<%= @student.last_name %>"
   />
 
-  <label for="house_select">Update house :</label>
-  <select name="house_id" id="id">
-    <option
-    value="1"
-    <%= "selected" if @student.house == "1" %>
-    >Griffindor</option>
-    <option
-    value="3"
-    <%= "selected" if @student.house == "3" %>
-    >Ravenclaw</option>
-    <option
-    value="2"
-    <%= "selected" if @student.house == "2" %>
-    >Hufflepuff</option>
-    <option
-    value="4"
-    <%= "selected" if @student.house == "4" %>
-    >Slytherin</option>
+  <label for="house_select">Select House:</label>
+  <select name="house_id"
+    <% for house in @houses %>
+    <option value="<% house.id %><%="selected" if @student.house_id == house.id"><%= house.name %></option>
+    <% end %>
   </select>
+
 
   <label for="age-field">Quantity:</label>
   <input

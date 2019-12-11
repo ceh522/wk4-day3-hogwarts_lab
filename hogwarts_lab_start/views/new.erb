@@ -11,12 +11,12 @@
 <input type="number" min="10" name="age" id="age">
 
 <label for="house_select">Select House:</label>
-<select name="house_id" id="house_select">
-  <option value="1">Gryffindor</option>
-  <option value="2">Hufflepuff</option>
-  <option value="3">Ravenclaw</option>
-  <option value="4">Slytherin</option>
+<select name="house_id"
+  <% for house in @houses %>
+  <option value="<%= house.id %>"><%= house.name %></option>
+  <% end %>
 </select>
+
 
 <input type="submit" value="Enrol Student">
 
